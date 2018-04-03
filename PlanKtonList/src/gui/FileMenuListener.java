@@ -80,20 +80,20 @@ public class FileMenuListener implements ActionListener {
 			return;
 		
 		try (BufferedWriter buf = new BufferedWriter(new FileWriter("export.txt"))) {
-			buf.write("<html>Date:  " + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime()) + "<br><br></html>");
+			buf.write("Date:\t" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime()) + "\r\n\r\n");
 			int i = 1;
 			for(TestTube tt : data) {
-				buf.write("<html>Test tube (" + i++ + "):<br></html>");
-				buf.write("<html>  Code:   " + tt.getCode() + "<br></html>");
-				buf.write("<html>  Date:   " + tt.getDate() + "<br></html>");
+				buf.write("Test tube (" + i++ + "):\r\n");
+				buf.write("\tCode:   " + tt.getCode() + "\r\n");
+				buf.write("\tDate:   " + tt.getDate() + "\r\n");
 				
 				if (!tt.getContent().isEmpty()) {
-					buf.write("<html>   Content:<br></html>");
+					buf.write("\tContent:\r\n");
 					for(Element e : tt.getContent())
-						buf.write("<html>      - " + e.getName() + "      X " + e.getQuantity() + "<br></html>");
+						buf.write("\t\t- " + e.getName() + "      X " + e.getQuantity() + "\r\n");
 				}
 					
-				buf.write("<html><br></html>");
+				buf.write("\r\n");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -111,9 +111,9 @@ public class FileMenuListener implements ActionListener {
 		StringBuilder sb = new StringBuilder();
 		try (BufferedWriter buf = new BufferedWriter(new FileWriter(workingFile))){
 			for(TestTube tt : data) {
-				sb.append("# " + tt.getCode() + " " + tt.getDate() + "\n");
+				sb.append("# " + tt.getCode() + " " + tt.getDate() + "\r\n");
 				for(Element e : tt.getContent())
-					sb.append(e.getName() + " " + e.getQuantity() + " " + ((e.getPathToPhoto() == null) ? "" : e.getPathToPhoto()) + "\n");
+					sb.append(e.getName() + " " + e.getQuantity() + " " + ((e.getPathToPhoto() == null) ? "" : e.getPathToPhoto()) + "\r\n");
 			}
 			buf.write(sb.toString());
 		} catch (IOException e) {
