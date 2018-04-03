@@ -80,20 +80,20 @@ public class FileMenuListener implements ActionListener {
 			return;
 		
 		try (BufferedWriter buf = new BufferedWriter(new FileWriter("export.txt"))) {
-			buf.write("Date:\t" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime()) + "\n\n");
+			buf.write("<html>Date:  " + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime()) + "<br><br></html>");
 			int i = 1;
 			for(TestTube tt : data) {
-				buf.write("Test tube (" + i++ + "):\n");
-				buf.write("\tCode:\t" + tt.getCode() + "\n");
-				buf.write("\tDate:\t" + tt.getDate() + "\n");
+				buf.write("<html>Test tube (" + i++ + "):<br></html>");
+				buf.write("<html>  Code:   " + tt.getCode() + "<br></html>");
+				buf.write("<html>  Date:   " + tt.getDate() + "<br></html>");
 				
 				if (!tt.getContent().isEmpty()) {
-					buf.write("\tContent:\n");
+					buf.write("<html>   Content:<br></html>");
 					for(Element e : tt.getContent())
-						buf.write("\t\t- " + e.getName() + "\t\tX " + e.getQuantity() + "\n");
+						buf.write("<html>      - " + e.getName() + "      X " + e.getQuantity() + "<br></html>");
 				}
 					
-				buf.write('\n');
+				buf.write("<html><br></html>");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -181,7 +181,7 @@ public class FileMenuListener implements ActionListener {
 	//This function handle the new choice in file menu
 	private void handleNew() {	
 		clearData();
-		Pattern pt = Pattern.compile("[A-Za-z][A-Za-z0-9]*.zoop");
+		Pattern pt = Pattern.compile("[A-Za-z][A-Za-z0-9_]*.zoop");
 		Matcher mt;
 		String fileName;
 		
