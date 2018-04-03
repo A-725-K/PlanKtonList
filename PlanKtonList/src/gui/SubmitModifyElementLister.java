@@ -39,7 +39,7 @@ public class SubmitModifyElementLister implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String s = textField.getText();
-		Pattern pt = Pattern.compile("[a-zA-Z][a-zA-Z0-9_\s]*");
+		Pattern pt = Pattern.compile("[a-zA-Z][a-zA-Z0-9_ ]*");
 		Matcher mt = pt.matcher(s);
 		int qty;
 		
