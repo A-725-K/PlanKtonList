@@ -113,7 +113,7 @@ public class FileMenuListener implements ActionListener {
 			for(TestTube tt : data) {
 				sb.append("# " + tt.getCode() + " " + tt.getDate() + "\n");
 				for(Element e : tt.getContent())
-					sb.append(e.getName() + "/" + e.getQuantity() + "/" + ((e.getPathToPhoto() == null) ? "" : e.getPathToPhoto()) + "\n");
+					sb.append(e.getName() + "@" + e.getQuantity() + "@" + ((e.getPathToPhoto() == null) ? "" : e.getPathToPhoto()) + "\n");
 			}
 			buf.write(sb.toString());
 		} catch (IOException e) {
@@ -147,7 +147,7 @@ public class FileMenuListener implements ActionListener {
 					model.addRow(new Object[]{infoLine[1], infoLine[2]});
 					data.add(toInsert);
 				} else {
-					infoLine = line.split("/");
+					infoLine = line.split("@");
 					if (infoLine.length == 2) {
 						toInsert.addElem(new Element(infoLine[0], Integer.valueOf(infoLine[1])));
 					} else if (infoLine.length == 3) {
