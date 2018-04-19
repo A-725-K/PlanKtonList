@@ -49,23 +49,23 @@ the actual situation of your tables.
 - Open an existing file
 To open a previous work you have to press on OPEN from the file menu;
 you can open a ".zoop" file containing your work. 
-/**************************************************************************\
+/******************************************************************************\
 *	*** WARNING *** : DO NOT MODIFY FOR ANY REASON THE .zoop FILE OF YOUR  *
-*					  WORK, THE ONLY CHANGES ALLOWED ARE THAT OFFERED INTO *
-*					  THE PROGRAM.										   *
-\**************************************************************************/
+*			  WORK, THE ONLY CHANGES ALLOWED ARE THAT OFFERED INTO *
+*			  THE PROGRAM.					       *
+\******************************************************************************/
 
 - Export a file
 This function print the actual content of the table in a file in a 
 formatted way. To obtain a file named "export.txt" in the same directory
 where you launch this program you have to choice the EXPORT function in
 the file menu.
-/**************************************************************************\
+/******************************************************************************\
 *	*** WARNING *** : BE CAREFUL, THE EXPORT FUNCTION OVERWRITE YOUR TXT   *
-*					  FILE NAMED "export.txt" IN THE CURRENT FOLDER; IF    *
-*					  WANT TO SAVE THE FILE RENAME IT AND CLICK ON EXPORT  *
-*					  AGAIN TO OBTAIN A NEW "export.txt" FILE			   *
-\**************************************************************************/
+*			  FILE NAMED "export.txt" IN THE CURRENT FOLDER; IF    *
+*			  WANT TO SAVE THE FILE RENAME IT AND CLICK ON EXPORT  *
+*			  AGAIN TO OBTAIN A NEW "export.txt" FILE	       *
+\******************************************************************************/
 
 - Close the program
 To exit you can press the X button on top right of the window or,
