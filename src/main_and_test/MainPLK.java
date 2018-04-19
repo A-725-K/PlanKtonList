@@ -8,7 +8,7 @@ package main_and_test;
 import javax.swing.SwingUtilities;
 import gui.Program_Gui;
 
-public class MainPKL {
+public class MainPLK {
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
