@@ -10,7 +10,6 @@ import gui.Program_Gui;
 
 public class MainPLK {
 	public static void main(String[] args) {
-		//Start the GUI and the program
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
